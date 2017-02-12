@@ -19,5 +19,45 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        
+        <table>
+            <thead>
+
+                <tr>
+
+                    <th> Title</th>
+                    <th> Actor</th>
+                    <th> Actress</th>
+                    <th> Genre</th>
+                    <th> Year</th>
+
+                </tr>
+
+
+            </thead>
+            <tbody>
+
+                <c:forEach items="${sessionScope.outList}" var="moviebean">
+                    <tr>
+                        <td>${moviebean.movieTitle}</td>
+                        <td>${moviebean.movieActor}</td>
+                        <td>${moviebean.movieActress}</td>
+                        <td>${moviebean.movieGenre}</td>
+                        <td>${moviebean.movieYear}</td>
+                        
+                    </tr>
+
+
+                </c:forEach>
+
+
+
+            </tbody>
+
+
+        </table>
+
+
+        
     </body>
 </html>

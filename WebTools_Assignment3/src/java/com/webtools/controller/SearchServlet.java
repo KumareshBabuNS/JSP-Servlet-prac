@@ -5,12 +5,17 @@
  */
 package com.webtools.controller;
 
+import com.webtools.beans.MovieBean;
+import com.webtools.dao.MovieDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -61,9 +66,42 @@ public class SearchServlet extends HttpServlet {
      
      response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession();
+
        
+         MovieDAO moviedaoObj = new MovieDAO();
+        try{
+        
+            
+            String keyword = request.getParameter("searchText");
+            String choice = request.getParameter("radio");
+            String selected_choice = (choice.equals("title")?"title":choice.equals("actor")?"actor":"actress");
+                    
+            ArrayList<MovieBean> outList =moviedaoObj.searchMovie(keyword, selected_choice);
+            
+            for(MovieBean mb: outList)
+            {
+                System.out.println("title"+ mb.getMovieTitle());
+                System.out.println("actor"+ mb.getMovieActor());
+                System.out.println("actress"+ mb.getMovieActress());
+                System.out.println("genre"+ mb.getMovieGenre());
+                System.out.println("year"+ mb.getMovieYear());
+                
+            }
+            
+            session.setAttribute("outList", outList);
+                       
+                        RequestDispatcher rd = request.getRequestDispatcher("searchresults.jsp");
+                        rd.forward(request, response);
+        
+        }catch(Exception ex)
+        {
+        
+            System.out.println("Exception occured");
+            ex.printStackTrace();
+        }
         /*
-        MovieDAO moviedaoObj = new MovieDAO();
+       
         try {
            
                                 String movieTitle=request.getParameter("movieTitle");
