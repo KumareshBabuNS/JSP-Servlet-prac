@@ -79,6 +79,13 @@ public class SearchServlet extends HttpServlet {
                     
             ArrayList<MovieBean> outList =moviedaoObj.searchMovie(keyword, selected_choice);
             
+            
+            if(outList.isEmpty())
+            {
+            
+            response.sendRedirect("errorpage.jsp");
+            }
+            
             for(MovieBean mb: outList)
             {
                 System.out.println("title"+ mb.getMovieTitle());

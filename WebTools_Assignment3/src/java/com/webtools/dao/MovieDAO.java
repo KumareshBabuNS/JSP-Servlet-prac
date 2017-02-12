@@ -25,7 +25,7 @@ public class MovieDAO {
     public ArrayList<MovieBean> searchMovie(String keyword, String choice)
     {
     
-        String query="SELECT * FROM movies;";
+        String query="";
         if("title".equals(choice))
         {
         query ="SELECT * FROM movies WHERE title like ?;";
@@ -44,6 +44,15 @@ public class MovieDAO {
         ArrayList<MovieBean> outList = new ArrayList<>();
         
         try{
+            
+            if("".equals(query))
+            {
+            
+                System.out.println("Error Empty search query");   
+            }
+            else{
+            
+            
         Connection con= conn.getConnection();
             PreparedStatement pst=con.prepareStatement(query);
         
@@ -80,6 +89,9 @@ public class MovieDAO {
                                 
 			}
 
+                
+            }
+            
         
         
         }catch(Exception ex)

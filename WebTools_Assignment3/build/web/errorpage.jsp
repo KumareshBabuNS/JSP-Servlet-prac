@@ -30,7 +30,7 @@
 
             <div class="datarow">
                 <label>
-                    <span>Error Occurred! Movie not added due to error:</span>
+                    <span>Error Occurred!</span>
                   </label>
                  <p>
                      <c:out value="${errMsg}"/>

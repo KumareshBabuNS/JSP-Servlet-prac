@@ -158,14 +158,14 @@ public class AdditionFilter implements Filter {
                                 if (movieTitle == null || "".equals(movieTitle)
                 || movieActor == null || "".equals(movieActor)|| movieActress == null || "".equals(movieActress)|| movieGenre == null || "".equals(movieGenre)|| movieYear == null || "".equals(movieYear)) {
 
-            request.setAttribute("errMsg", "One or more fields are empty");
+            request.setAttribute("errMsg", "Movie not added. One or more fields are empty");
 
             RequestDispatcher rd = request.getRequestDispatcher(errorpage);
             rd.include(request, response);
 
         } else if (valid == false) {
             
-            request.setAttribute("errMsg", "Input format not valid");
+            request.setAttribute("errMsg", "Movie not added. Input format not valid");
             RequestDispatcher rd = request.getRequestDispatcher(errorpage);
             rd.include(request, response);
         } else {
