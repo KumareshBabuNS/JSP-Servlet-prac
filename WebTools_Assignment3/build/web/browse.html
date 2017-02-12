@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Welcome to Movie Store</title>
+        <link rel="stylesheet" href="style.css">
+        
+</head>
+<body>
+
+	
+    
+
+    <div class="main-content">
+
+        
+        <form class="dataform" method="post" action="searchcontroller">
+
+            <div class="dataheading">
+                <h1>Searching movies</h1>
+            </div>
+
+            
+            <div class="datarow">
+                <label>
+                    <span>Keyword</span>
+                </label>
+                <input type="text" name="searchText"/>
+                
+            </div>
+            
+                        
+             <div class="datarow">
+                <label><span>Condition</span></label>
+                <div class="dataradiobuttons">
+
+                    <div>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span>Search by Title</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span>Search by Actor</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span>Search by Actress</span>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+
+
+          
+            <div class="datarow">
+                
+                <input class="submitbutton" type="submit" value="Send">
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
+

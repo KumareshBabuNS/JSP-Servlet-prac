@@ -1,0 +1,119 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 10, 2017, 6:29:25 PM
+    Author     : richa
+*/
+
+html{
+    background-color: #f3f3f3;
+}
+
+.dataform{
+    box-sizing: border-box;
+    max-width: 475px;
+    margin: 0 auto;
+    padding: 55px;
+
+    background-color:  #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+
+    font: bold 14px sans-serif;
+    text-align: center;
+}
+
+.dataform .datarow{
+    text-align: left;
+    max-width: 315px;
+    margin: 25px auto 0;
+}
+
+.dataform .dataheading{
+    margin: 0 auto 40px;
+}
+
+.dataform h1{
+    display: inline-block;
+    box-sizing: border-box;
+    color: #4C565E;
+    font-size: 24px;
+    padding: 0 0 12px 0;
+    margin: 0;
+    border-bottom: 2px solid #6CAEE0;
+}
+
+.dataform .datarow > label span{
+    display: block;
+    box-sizing: border-box;
+    color:  #5f5f5f;
+    width: 200px;
+    padding: 0 0 12px;
+}
+
+.dataform input{
+    color:  #5f5f5f;
+    box-sizing: border-box;
+    width: 300px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 12px 18px;
+    border: 1px solid #dbdbdb;
+}
+
+.dataform input[type=radio],
+.dataform input[type=checkbox]{
+    box-shadow: none;
+    width: auto;
+}
+
+.dataform select{
+    background-color: #ffffff;
+    color:  #5f5f5f;
+    box-sizing: border-box;
+    width: 240px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 12px 18px;
+    border: 1px solid #dbdbdb;
+}
+
+.dataform .dataradiobuttons > div{
+    margin-bottom: 10px;
+}
+
+.dataform .dataradiobuttons label span{
+    margin-left: 8px;
+    color:  #5f5f5f;
+    font-weight: normal;
+}
+
+.dataform .dataradiobuttons input{
+    width: auto;
+}
+
+.dataform .submitbutton{
+    border-radius: 2px;
+    background-color:  #6caee0;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 14px 22px;
+    border: 0;
+    margin-top: 15px;
+}
+
+/*	Making the form responsive. Remove this media query
+    if you don't need the form to work on mobile devices. */
+
+@media (max-width: 600px) {
+
+    .dataform{
+        padding: 30px;
+    }
+
+    .dataform input{
+        width: 240px;
+    }
+
+}
